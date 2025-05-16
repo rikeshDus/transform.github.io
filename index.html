@@ -1,0 +1,46 @@
+<html>
+  <style>
+    .site-cos .slds-visual-picker-select .slds-visual-picker__figure svg {
+        width: 43px;
+        height: 40px;
+        fill: #fff;
+        stroke: #002a42;
+    }
+    fieldset div.slds-form-element__control {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        flex-flow: row wrap;
+    }
+    .site-cos .slds-visual-picker__container {
+        margin-right: 1rem;
+        margin-bottom: 20px;
+    }
+  </style>
+<script src="https://transformcambodia--test.sandbox.my.salesforce.com/stirling/lightning/lightning.out.js"></script>
+  <div id="spinner">
+    Loading...
+  </div>
+<div data-lightning-out="true" class="site-cos"></div>
+<script>
+    const appName='c:LC01_ChildProfileCards';
+    const componentname='c:lwc01_ChildProfileCards';
+    const lightningEndPoint='https://transformcambodia--test.sandbox.my.salesforce.com/stirling';
+    const targetElement=document.querySelector("[data-lightning-out]");
+     $Lightning.use(
+        appName, 
+        function() {
+          console.log('inside first function');
+        $Lightning.createComponent(
+            componentname, 
+            {},
+            targetElement ,
+              function(cmp) {
+                console.log("LWC component was created");
+                document.getElementById("spinner").innerHTML = "";
+              }
+          );
+        },
+        lightningEndPoint
+      );
+</script>
+</html>
